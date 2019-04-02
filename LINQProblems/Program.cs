@@ -18,6 +18,16 @@ namespace LINQProblems
             {
                 Console.WriteLine(el);
             }
+            
+
+            //2.Using LINQ, write a function that takes in a list of strings and returns a copy of thelist without duplicates.
+            List<string> names = new List<string>() { "Mike", "Brad", "Nevin", "Ian", "Mike" };
+            var substring = names.Distinct();
+            foreach (var le in substring)
+            {
+                Console.Write(le);
+            }
+
             Console.ReadLine();
         }
     }
