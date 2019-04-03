@@ -30,7 +30,7 @@ namespace LINQProblems
             }
 
             Console.ReadLine();
-            
+
             //3.Using LINQ, write a function that calculates the class grade average after dropping the lowest grade for each student.
             //The function should take in a list of strings of grades (e.g., one string might be "90,100,82,89,55"),
             //drops the lowest grade from each string, averages the rest of the grades from that string, then averages the averages.
@@ -56,6 +56,20 @@ namespace LINQProblems
             }
             var averageGrade = avrgList2.Average();
             Console.WriteLine(averageGrade);
+            Console.ReadLine();
+
+            //4. Write a function that takes in a string of letters(i.e. “Terrill”) and 
+            //  returns an alphabetically ordered string corresponding to the letter frequency(i.e. "E1I1L2R2T1")
+
+            string name = "Terril";
+            var arrayResult = name.ToUpper().ToArray().OrderBy(j => j);
+            var result = arrayResult.GroupBy(x => x, (key, values) => new { key, values = values.Count() });
+            var newString = "";
+            foreach(var item in result)
+            {
+                newString += item.key.ToString() + item.values;
+            }
+            Console.WriteLine(newString);
             Console.ReadLine();
         }
     }
